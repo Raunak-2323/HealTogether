@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Search</title>
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <style>
+            /* Global styles */
+            body {
+                font-family: "Open Sans", sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                color: #333;
+            }
+        
+            h1 {
+                text-align: center;
+                color: #1a76d1;
+                font-weight: bold;
+                margin-top: 20px;
+                font-size: 3rem;
+                margin-bottom: 35px;
+            }
+            /* General button styling */
+button {
+    font-size: 1rem; /* Adjust the font size as needed */
+    padding: 10px 19px;
+    background-color: #1a76d1; /* Change this to the color of the 'Book Appointment' button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 143px;
+    margin-left:15px;
+
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #155fa3; /* Change this to the hover color of the 'Book Appointment' button */
+    transform: scale(1.05); /* Adds a slight zoom effect when hovered */
+}
+
+/* If there are any specific button classes like 'book-appointment', you can target them as well */
+.search-container button {
+    font-size: 1rem;
+    padding: 12px 30px;
+    background-color: #1a76d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 175px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+   
+}
+
+.search-container button:hover {
+    background-color: #155fa3;
+    transform: scale(1.05);
+}
+
+            /* Centering the search container */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Centering labels and inputs */
+.search-container label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+#location {
+    font-size: 0.9rem; /* Increases the font size */
+    padding: 10px 15px; /* Adds more padding inside the input box */
+    width: 100%; /* Makes the input take up the full width of its container */
+    max-width: 320px; /* You can adjust this value as needed */
+    border: 2px solid #ccc; /* Optional, you can change the border color */
+    border-radius: 5px; /* Optional, adds rounded corners */
+    margin-left:15px;
+}
+#testType{
+    font-size: 0.9rem; /* Increases the font size */
+    padding: 10px 15px; /* Adds more padding inside the input box */
+    width: 100%; /* Makes the input take up the full width of its container */
+    max-width: 320px; /* You can adjust this value as needed */
+    border: 2px solid #ccc; /* Optional, you can change the border color */
+    border-radius: 5px; /* Optional, adds rounded corners */
+    margin-left:15px;
+}
+
+/* Optional: To add some styling to the label as well */
+label[for="location"] {
+    font-size: 1.4rem; /* Increases the font size of the label */
+    margin-bottom: 5px; /* Adds space between the label and input */
+    margin-left:15px;
+}
+label[for="testType"] {
+    font-size: 1.4rem; /* Increases the font size of the label */
+    margin-bottom: 5px; /* Adds space between the label and input */
+    margin-left:15px;
+}
+
+
+/* Styling the input fields */
+.search-container input[type="text"],
+.search-container select {
+    font-size: 1.2rem;
+    padding: 12px 15px; /* Adjusted padding for better appearance */
+    width: 100%;  /* Set the width to 100% to make it responsive */
+    max-width: 350px; /* Max width for large screens */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    text-align: left;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Styling the select field */
+.search-container select {
+    -webkit-appearance: none; /* Removes default styling in Safari */
+    -moz-appearance: none; /* Removes default styling in Firefox */
+    appearance: none; /* Ensures consistent appearance across browsers */
+    background-color: #fff;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath d="M4 6l4 4 4-4z"%3E%3C/path%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Arrow position */
+    background-size: 12px;
+    padding-right: 30px; /* Space for the arrow */
+    font-size: 2rem;
+}
+
+/* Search button styling */
+.search-container button {
+    font-size: 2.4rem;
+    padding: 12px 30px;
+    background-color: #1a76d1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Search button hover effect */
+.search-container button:hover {
+    background-color: #155fa3;
+}
+
+ 
+            /* Results container (two-column layout) */
+            #results {
+                margin: 20px auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* Two columns */
+                gap: 45px;
+                justify-content: center;
+                padding: 0 10px;
+                max-width: 1250px;
+            }
+        
+            /* Lab result box styling */
+            .lab-result {
+                background-color: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+                flex-direction: column;
+                position: relative;
+            }
+        
+            /* Lab name styling */
+            .lab-result h3 {
+                color: #1a76d1;
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+            }
+        
+            /* Lab info styling */
+            .lab-result p {
+                font-size: 1rem;
+                margin: 5px 0;
+                color: #333;
+            }
+        
+            .lab-result p strong {
+                color: black;
+            }
+        
+            /* Price styling */
+            .lab-result p strong:nth-child(4) {
+                color: #e74c3c; /* Red for price */
+            }
+        
+            /* Book Appointment button styling */
+            .book-appointment-btn {
+                background: #1f76bd;
+                color: #fff;
+                border-radius: 4px;  /* Rectangular with rounded corners */
+                border: 2px solid #1f76bd;  /* Blue border */
+                padding: 12px 25px;
+                font-family: "Open Sans", sans-serif;
+                text-transform: uppercase;
+                text-decoration: none;
+                display: inline-block;
+                transition: all 0.3s;
+                cursor: pointer;
+                margin-top: 10px;
+                text-align: center;
+                position: absolute;
+                bottom: 15px;
+                right: 15px;  /* Positioned at the bottom-right */
+                max-width:245px;
+            }
+        
+            .book-appointment-btn:hover {
+                background: #fff;
+                color: #1f76bd;
+                border: 2px solid #1f76bd; 
+         /* Keep blue border on hover */
+            }
+        </style>
+        
+        
+        
+        
+
+    
+</head>
+<body>
+    <header class="header" >
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-5 col-12">
+                        <!-- Contact -->
+                        <!-- <ul class="top-link">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul> -->
+                        <!-- End Contact -->
+                    </div>
+                    <div class="col-lg-6 col-md-7 col-12">
+                        <!-- Top Contact -->
+                        <ul class="top-contact">
+                            <li><i class="fa fa-phone"></i>+91 9876543210</li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:support@healtogether.com">support@healtogether.com</a></li>								
+                        </ul>
+                        <!-- End Top Contact -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Topbar -->
+        <!-- Header Inner -->
+        <div class="header-inner">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <!-- Start Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="img/logo.jpg" alt="#"></a>
+                            </div>
+                            <!-- End Logo -->
+                            <!-- Mobile Nav -->
+                            <div class="mobile-nav"></div>
+                            <!-- End Mobile Nav -->
+                        </div>
+                        <div class="col-lg-7 col-md-9 col-12">
+                            <!-- Main Menu -->
+                            <div class="main-menu">
+                                <nav class="navigation">
+                                    <ul class="nav menu">
+                                        <li><a href="index.html">Home</i></a>
+                        
+                                        <li><a href="#">Community </a></li>
+                                        <li><a href="index.html#cancer-detection">Awareness</a></li>
+                                        <li  class="active"><a href="labs.html">Labs</a>
+                                        </li>
+                                        <li><a href="donation.html">Donation</a>
+                                            
+                                        </li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!--/ End Main Menu -->
+                        </div>
+                        <div class="col-lg-2 col-12">
+                            <div class="get-quote">
+                                <a href="appointment.html" class="btn">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <h1>Find Nearby Labs</h1>
+    <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Enter location"><br><br>
+    
+        <label for="testType">Test Type:</label>
+        <select id="testType">
+            <option value="">Select a test</option>
+            <option value="PET Scan">PET Scan</option>
+            <option value="MRI">MRI</option>
+            <option value="NGS">Next-Generation Sequencing (NGS)</option>
+            <option value="FISH">Fluorescence In Situ Hybridization (FISH)</option>
+            <option value="Liquid Biopsy">Liquid Biopsy</option>
+        </select><br><br>
+    
+        <button onclick="searchLabs()">Search</button>
+    
+    
+    <div id="results"></div>  <!-- Results container -->
+    <!-- Footer Area -->
+		<footer id="footer" class="footer ">
+			<!-- Footer Top -->
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<!-- About Us Column -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>About Us</h2>
+								<p>We are dedicated to providing support and resources for individuals navigating health challenges, with a focus on mental health and community-driven care. Our mission is to empower you with knowledge and services that promote a healthier future for all.</p>
+								<!-- Social -->
+								<ul class="social">
+									<li><a href="#"><i class="icofont-facebook"></i></a></li>
+									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
+									<li><a href="#"><i class="icofont-twitter"></i></a></li>
+									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
+									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
+								</ul>
+								<!-- End Social -->
+							</div>
+						</div>
+		
+						<!-- Quick Links Column -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="single-footer f-link">
+								<h2>Quick Links</h2>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-12">
+										<ul>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+											<li><a href="community.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Community</a></li>
+											<li><a href="#cancer-detection"><i class="fa fa-caret-right" aria-hidden="true"></i>Awareness</a></li>
+											<li><a href="labs.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Labs</a></li>
+											<li><a href="donation.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Donation</a></li>
+											<li><a href="contact.html"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+		
+						<!-- Newsletter Column -->
+						<div class="col-lg-4 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>Newsletter</h2>
+								<p>Subscribe to our newsletter for the latest updates, helpful tips, and news on health resources and support. Stay connected and informed!</p>
+								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'" required="" type="email">
+									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</footer>
+		
+
+
+    <script src="js/labs.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    overflow-x: hidden;
+}
+
+/* Container for the lab section */
+.lab-list-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.lab-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    
+}
+
+/* Flex layout for image on left and details on right */
+.lab-header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Image style */
+.lab-image {
+    width: 450px;  /* Adjust the size as needed */
+    height: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px; /* Space between image and text */
+    padding: 5px;
+}
+
+/* Lab details section (heading and text) */
+/* .lab-details {
+    text-align: left;
+} */
+
+.lab-name {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #1A76D1; /* Your website's theme color */
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.lab-address,
+.lab-phone,
+.lab-email {
+    font-size: 1.2em;
+    color: #333;
+    margin: 5px 0;
+    text-align: right;
+}
+
+
+/* Test box section */
+.test-box {
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+/* Test heading style */
+.test-heading {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #1A76D1; /* Matching theme color */
+}
+
+/* Flex container for test items */
+.test-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin: 30px;
+}
+
+.test-item {
+    width: 48%; /* Adjusting width to have 2 items per row */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.test-item strong {
+    font-size: 1.5em;
+    color: #1A76D1; /* Matching theme color */
+}
+
+.test-description {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button style */
+.book-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; /* Full width button */
+    cursor: pointer;
+}
+
+.book-button a{
+    color: white;
+}
+
+.book-button:hover {
+
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Separator line */
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .test-item {
+        width: 100%; /* Stacking test items in a single column on small screens */
+    }
+
+    .test-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
